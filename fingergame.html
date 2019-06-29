@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Finger Game</title>
+    
+    </head>
+    <body>
+        
+        <p>How many fingers Am I holding up?</p>
+        <input type="text" id = "textInput">
+        <button id ="correctornot">Guess</button>
+        <script type="text/javascript">
+            document.getElementById("correctornot").onclick = function(){
+                var min = 1
+                var max = 5
+                var x = Math.floor(Math.random() * (max - min + 1)) * min 
+                var numberGuess = document.getElementById("textInput").value
+                if(x == numberGuess){
+                    alert("Hurray!!You won");
+                }else{
+                    alert("Nops! the number was" + x);
+                }
+            }
+        
+        </script>
+    </body>
+
+</html>
