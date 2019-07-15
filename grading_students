@@ -1,0 +1,15 @@
+vector<int> gradingStudents(vector<int> grades) {
+vector<int>grad(grades.size());
+int value;
+for(int i=0;i<=grades.size();i++){
+    value=grades[i];
+    if(value >= 38 && value % 5 >2)
+                {
+                    grad[i] = value + (5 - (value % 5));
+                }
+     else{
+        grad[i]=value;
+    }
+}
+return grad;
+}
