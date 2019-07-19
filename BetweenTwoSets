@@ -1,0 +1,26 @@
+int getTotalX(const vector<int>& a, const vector<int>& b) {
+    // protect from out of bounds iterators
+    if (a.empty() || b.empty()) {
+        return 0;
+    }
+        // in case arrays are not sorted
+    int a_max = *max_element(a.begin(), a.end());
+        
+        // in case arrays are not sorted
+    int b_min = *min_element(b.begin(), b.end());
+        
+        // start from max value of a
+    int number = a_max;
+    int ret = 0;
+        
+        // check each multiple of a_max to be a multiple of each a[] element
+        // and be a factor of each b[] element
+    while (number <= b_min) {
+        if (all_of(a.begin(), a.end(), [number](int i){return (number % i) == 0; }) &&
+        all_of(b.begin(), b.end(), [number](int i){return (i % number) == 0; })) {
+            ++ret;
+        }
+        number += a_max;
+    }
+    return ret;
+}
