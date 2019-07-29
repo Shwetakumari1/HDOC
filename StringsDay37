@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	// Complete the program
+    string a;
+    cin>>a;
+    string b;
+    cin>>b;
+    int lena = a.size();
+    int lenb = b.size();
+    cout<<lena <<" "<<lenb<<"\n";
+    string c = a + b;
+    cout<<c<<"\n";
+    char ch[100000];
+    char chb[1000000];
+    for(int i=1;i<lena;i++){
+        ch[i]=a[i];
+        ch[0]=b[0];
+    }
+    for(int i=1;i<lenb;i++){
+        chb[i]=b[i];
+        chb[0]=a[0];
+    }
+    cout<<ch<<" "<<chb;
+    return 0;
+}
