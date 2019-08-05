@@ -1,0 +1,23 @@
+string dayOfProgrammer(int year) {
+
+
+    int day=0;
+    if(year==1918)
+    {
+        day=26;
+    }
+
+    if(year>=1700 && year<=1917)
+    {
+        day=(year%4==0?12:13);
+    }
+
+    if(year>=1919 && year<=2700)
+    {
+        day=((year%400==0) || (year%4==0 && year%100!=0))?12:13;
+    }
+return to_string(day) + ".09." + to_string(year);
+
+
+
+}
