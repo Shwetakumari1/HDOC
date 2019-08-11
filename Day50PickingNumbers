@@ -1,0 +1,21 @@
+int pickingNumbers(vector<int> a) {
+    sort(a.begin(),a.end());
+    int max=-1,start,index,t=-1;
+    for(int i=0;i<a.size();i++){
+        if(i==0){
+            start=a[i];
+            index=0;
+        }
+        if(a[i]-start>1){
+            t=i-index;
+            index=i;
+            start=a[i];
+        }
+        if(t>max){
+            max=t;
+        }
+    }
+    if(max==-1){
+    max=a.size();}
+    return max;
+}
