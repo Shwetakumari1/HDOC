@@ -1,0 +1,11 @@
+int designerPdfViewer(vector<int> h, string word) 
+{
+    int m=0;
+
+    for(int i=0;i<word.length();i++)
+    {
+        m=(h[int(word[i])-97]>m)?h[int(word[i])-97]:m;
+    }
+
+    return m*word.length();
+}
