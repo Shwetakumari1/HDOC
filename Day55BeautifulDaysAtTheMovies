@@ -1,0 +1,11 @@
+int beautifulDays(int i, int j, int k) 
+{
+    auto count=0;
+    for(int x = i;x<= j;x++)
+    {   string revX = to_string(x);
+        reverse(revX.begin(),revX.end());
+        if(abs(x - stoi(revX)) % k == 0)
+            count++;
+    }
+    return count;
+}
